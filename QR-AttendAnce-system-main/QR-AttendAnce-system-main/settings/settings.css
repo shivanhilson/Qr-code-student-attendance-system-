@@ -1,0 +1,59 @@
+:root {
+    --background-color1: #fafaff; 
+    --background-color2: #f5ecdd; 
+    --background-color3: #f5ecdd; 
+    --background-color4: rgb(255, 255, 223); 
+    --primary-color: #ff8902; 
+    --secondary-color: #ff8902; 
+    --Border-color: #04AA6D; 
+    --one-use-color: #04AA6D;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color1);
+    margin: 0;
+    padding: 20px;
+    color: var(--Border-color);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--background-color2);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(235, 143, 4, 0.884);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--Border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: var(--one-use-color);
+    
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--Border-color);
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: rgb(255, 255, 223);
+            border: 1px solid rgba(255, 136, 0, 0.717);
+            border-radius: 12px;
+            z-index: 9;
+            padding: 16px;
+            color: #04AA6D;
+        }
+        img{
+            width: 295px;
+        }
+
+        input[type=text], input[type=password], select {
+            width: calc(100% - 23px); /* Make input fields flexible width */
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            background: #f1f1f1;
+            color: rgb(255, 136, 0);
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .role-label {
+            text-align: left;
+        }
+        body {
+           
+            background: url('images/IMG-20240412-WA0002.jpg') center center/cover no-repeat; 
+        }
+        
+
+        .role {
+            width: calc(100% - 23px); /* Make input fields flexible width */
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            background: #f1f1f1;
+            color: rgb(255, 136, 0);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="images/logo.jpg" alt="Logo">
+    <form id="loginForm">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="role" class="role-label">Role</label>
+        <select id="role" name="role">
+            <option value="admin">Admin</option>
+            <option value="lecturer">Lecturer</option>
+        </select>
+
+        <button type="button" onclick="login()">Login</button>
+    </form>
+</div>
+
+<script>
+    function login() {
+        var username = document.getElementById("username").value;
+        var role = document.getElementById("role").value;
+
+        var formData = new FormData();
+        formData.append('username', username);
+        formData.append('role', role);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'authenticate.php', true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Authentication successful, redirect to the appropriate dashboard page
+                window.location.href = xhr.responseText; // Redirect to the dashboard page returned by the PHP script
+            } else {
+                // Authentication failed, display error message
+                alert('Authentication failed. Please try again.');
+            }
+        };
+        xhr.send(formData);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* Popup container */
+.form-popup {
+    display: none;
+    position: fixed;
+    top:20%;
+    left: 50%;
+    background-color: rgb(255, 255, 223);
+    border: 1px solid rgba(255, 136, 0, 0.717);
+    border-radius: 12px;
+    z-index: 9999;
+    padding: 16px;
+    max-width: 300px;
+    color: #04AA6D;
+}
+
+/* Close icon */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Full-width input fields */
+.form-popup input[type="text"],
+.form-popup input[type="date"] {
+    width: calc(100% - 23px);
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    background: #f1f1f1;
+    color: rgb(255, 136, 0);
+}
+
+/* When the inputs get focus */
+.form-popup input[type="text"]:focus,
+.form-popup input[type="date"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set style for the submit button */
+.form-popup button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+/* Hover effects for buttons */
+.form-popup button:hover {
+    opacity: 0.8;
+}
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #ff8902; /* Orange background color */
+    color: white; /* White text color */
+}
+
+/* Style the options inside the select */
+option {
+    background-color: #04AA6D; /* Green background color */
+    color: white; /* White text color */
+}
